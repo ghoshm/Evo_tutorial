@@ -1,0 +1,55 @@
+name: Evo_tutorial
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - numpy
+  - matplotlib
+  - setuptools
+  - matplotlib-inline
+  - libsodium
+  - typing_extensions
+  - xz
+  - platformdirs
+  - wheel
+  - pywin32
+  - pip
+  - packaging
+  - jupyter_client
+  - asttokens
+  - tornado
+  - pyzmq
+  - parso
+  - pygments
+  - libffi
+  - nest-asyncio
+  - traitlets
+  - vs2015_runtime
+  - zeromq
+  - psutil
+  - wcwidth
+  - python-dateutil
+  - stack_data
+  - openssl
+  - ca-certificates
+  - ipython
+  - prompt_toolkit
+  - executing
+  - prompt-toolkit
+  - tzdata
+  - sqlite
+  - jedi
+  - tk
+  - bzip2
+  - decorator
+  - jupyter_core
+  - six
+  - colorama
+  - zlib
+  - comm
+  - vc
+  - pure_eval
+  - debugpy
+  - ipykernel
+  - tqdm
+prefix: C:\Users\ghosh\anaconda3\envs\Evo_tutorial
