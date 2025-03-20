@@ -1,0 +1,33 @@
+# style_sheet
+
+# AXES 
+axes.spines.right : False 
+axes.spines.top : False 
+axes.labelsize : 20
+axes.titlesize : 20
+axes.linewidth : 3
+
+# FONT
+font.size : 20 
+
+# FIG 
+figure.figsize : 5, 5 
+# Note: try to stick to multiples of this figsize (e.g. for 3 subplots in 1 row, use 15, 5 # width, height)
+figure.dpi : 100
+savefig.dpi : 300
+
+# LINES
+lines.linewidth : 3
+lines.markersize : 10
+
+# LEGEND
+legend.frameon : False 
+legend.fontsize : 8 
+
+# TICKS 
+xtick.labelsize: 20
+ytick.labelsize: 20
+xtick.major.width : 2
+ytick.major.width : 2
+xtick.major.size : 5
+ytick.major.size : 5
