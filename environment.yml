@@ -52,4 +52,7 @@ dependencies:
   - debugpy
   - ipykernel
   - tqdm
+  - pip 
+  - pip:
+    - netgraph
 prefix: C:\Users\ghosh\anaconda3\envs\Evo_tutorial

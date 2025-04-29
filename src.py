@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import colors
 from tqdm import tqdm
+from netgraph import Graph
 import copy
 
 plt.style.use("./style_sheet.mplstyle")
@@ -80,6 +81,52 @@ class RecurrentNetwork:
         for _ in range(number):
             self.units = np.append(self.units, self.units[-1] + 1)
             self.unit_types = np.append(self.unit_types, 1)
+
+
+def plot_architecture(network):
+    """
+    Plots an architectures node's and edges.
+    Arguments:
+        network: an instance of the RecurrentNetwork class.
+    Notes:
+        Input, hidden and output nodes are always plotted at the same
+            x location (0, 1, 2) but random y locations.
+            So each call will produce a slightly different plot.
+        Negative/positive weights are shown in green/purple.
+        If all weight values are the same, the color will be grey.
+        If network has no edges, only nodes will be plotted.
+    """
+
+    # Nodes
+    node_positions = {}  # node : (x, y)
+    for k in network.units:
+        node_positions.update({k: (network.unit_types[k], np.random.rand(1).item())})
+
+    # Edges
+    edges = []  # (source, target, weight)
+    for cg in network.connections:
+        edges.append((cg[0], cg[1], cg[2]))
+
+    # Plotting
+    cmap = "PiYG"
+    if len(edges) > 0:
+        plt.figure(figsize=[10, 10])
+        Graph(
+            edges,
+            node_layout=node_positions,
+            node_size=3,
+            edge_cmap=cmap,
+            edge_width=1.0,
+            arrows=True,
+        )
+
+    else:
+        plt.figure(figsize=[5, 5])
+        for k in node_positions:
+            plt.scatter(node_positions[k][0], node_positions[k][1], c="k")
+
+    plt.xticks([0, 1, 2], ["Input", "Hidden", "Output"])
+    plt.yticks([])
 
 
 # def plot_approximation(network, neuron_spike_times, neuron_spike_idx, input_I):
